@@ -10,5 +10,11 @@
   )
 )
 
+(defn json-to-map
+  [json-data]
+  (json/read-str (str json-data) :key-fn keyword)
+)
+
 (def json-data (read-json-from-file "../invoice.json"))
-(println "JSON Data:" json-data)
+(def invoice-map (json-to-map json-data))
+(println "JSON Data:" invoice-map)
