@@ -1,7 +1,5 @@
 (ns invoice_filter)
 
-(ns invoice_filter)
-
 (defn filter-items [invoice]
   (->> invoice
        :invoice/items
