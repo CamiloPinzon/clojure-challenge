@@ -24,5 +24,10 @@
 
 (def json-data (read-json-from-file "../invoice.json"))
 (def invoice-map (json-to-map json-data))
-(def invoice-map (validate-invoice invoice-map))
-(println "JSON Data:" invoice-map)
+
+(def isValid (validate-invoice invoice-map))
+
+(if isValid
+  (println invoice-map)
+  (println "No Spect match")
+)
